@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+        }
+        .hero {
+            background-image: url("hero.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 90px;
+            min-height: 150px;
+            overflow: visible;
+            position: relative;
+        }
+        .hero h1, .hero h2 {
+            font-weight: 200;
+            margin: 0;
+        }
+        .logo{
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            position: relative;
+            right: 0;
+        }
+        .navbar {
+            width: 100%;
+            height: 80px;
+            background-color: #1b5f83;
+            color:  white;
+            position: sticky;
+            top: 20px;
+            margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Jost';
+            padding: 0 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .navbar p {
+            font-size: 26px;
+            font-weight: 300;
+            margin: 0;
+        }
+        .btn-group{
+            display: flex;
+            gap: 25px;
+        }
+        .btn{
+            padding: 10px 18px;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Jost', sans-serif;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: #1b5f83;
+            background-color: white;
+        }
+        .dropdown {
+            max-width: 1200px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        .dropdown h2 {
+            font-size: 28px;
+            color: #1b5f83;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .dropdown select {
+            padding: 14px 22px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+        }
+        .dropdown select:hover {
+            border-color: #1b5f83;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #1b5f83;
+            color: white;
+            font-weight: 500;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div>
+            <h1 style="letter-spacing: 6px; font-size: 80px; color: #1b5f83;">LINK LUZON,</h1>
+            <h2 style="letter-spacing: 4px; font-size: 50px; color: black;">RIDE THE FUTURE</h2>
+        </div>
+        <img src="logo.png" alt="LuzonLink Rail Logo" class="logo">
+    </header>
+
+    <div class="navbar" style="position: sticky; top: 40px;">
+        <p style="font-size: 26px; font-weight: 300;">LUZONLINK RAIL</p>
+        <div class="btn-group">
+            <a href="index.html"><button class="btn">HOME</button></a>
+            <a href="reg.html"><button class="btn">REGISTER</button></a>
+            <a href="farem.html" style="background-color: white;"><button class="btn" style="color: #1b5f83;">FARE MATRIX</button></a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <h2>Select a Train Line</h2>
+        <select id="trainSelect" onchange="showTable()">
+            <option value="">-- Select Train --</option>
+            <option value="mrt">🚇 MRT-3</option>
+            <option value="lrt1">🚋 LRT-1</option>
+            <option value="lrt2">🚋 LRT-2</option>
+        </select>
+
+        <p style="text-align:center; font-size:14px; color:#555; margin-top:10px;">
+        🛈 Tip: Choose a train to see distance, travel time, and fares!
+        </p>
+    </div>
+
+    <div class="table-container" id="mrt" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Distance from North Ave (km)</th>
+                    <th>Travel Time from North Ave (min)</th>
+                    <th>Base Fare (₱)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>North Avenue</td><td>0.0</td><td>0</td><td class="fare">7</td></tr>
+                <tr><td>Quezon Avenue</td><td>1.2</td><td>3</td><td class="fare">7</td></tr>
+                <tr><td>GMA Kamuning</td><td>2.3</td><td>5</td><td class="fare">7</td></tr>
+                <tr><td>Araneta Center-Cubao</td><td>3.8</td><td>8</td><td class="fare">7</td></tr>
+                <tr><td>Santolan-Annapolis</td><td>5.0</td><td>10</td><td class="fare">7</td></tr>
+                <tr><td>Ortigas</td><td>6.3</td><td>13</td><td class="fare">7</td></tr>
+                <tr><td>Shaw Boulevard</td><td>7.6</td><td>15</td><td class="fare">7</td></tr>
+                <tr><td>Boni</td><td>8.6</td><td>17</td><td class="fare">7</td></tr>
+                <tr><td>Guadalupe</td><td>9.8</td><td>20</td><td class="fare">7</td></tr>
+                <tr><td>Buendia</td><td>11.0</td><td>22</td><td class="fare">7</td></tr>
+                <tr><td>Ayala</td><td>12.3</td><td>25</td><td class="fare">7</td></tr>
+                <tr><td>Magallanes</td><td>13.5</td><td>27</td><td class="fare">7</td></tr>
+                <tr><td>Taft Avenue</td><td>16.9</td><td>30</td><td class="fare">7</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container" id="lrt1" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Distance from Baclaran (km)</th>
+                    <th>Travel Time from Baclaran (min)</th>
+                    <th>Base Fare (₱)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Baclaran</td><td>0.0</td><td>0</td><td class="fare">10</td></tr>
+                <tr><td>Redemptorist-Aseana</td><td>1.0</td><td>2</td><td class="fare">10</td></tr>
+                <tr><td>MIA Road</td><td>1.8</td><td>4</td><td class="fare">10</td></tr>
+                <tr><td>PITX</td><td>2.5</td><td>6</td><td class="fare">10</td></tr>
+                <tr><td>Ninoy Aquino Ave</td><td>3.3</td><td>8</td><td class="fare">10</td></tr>
+                <tr><td>Dr. Santos</td><td>4.1</td><td>10</td><td class="fare">10</td></tr>
+                <tr><td>Libertad</td><td>6.0</td><td>13</td><td class="fare">10</td></tr>
+                <tr><td>Gil Puyat</td><td>6.8</td><td>15</td><td class="fare">10</td></tr>
+                <tr><td>Vito Cruz</td><td>7.6</td><td>17</td><td class="fare">10</td></tr>
+                <tr><td>Quirino</td><td>8.4</td><td>19</td><td class="fare">10</td></tr>
+                <tr><td>Pedro Gil</td><td>9.2</td><td>21</td><td class="fare">10</td></tr>
+                <tr><td>United Nations</td><td>10.0</td><td>23</td><td class="fare">10</td></tr>
+                <tr><td>Central Terminal</td><td>11.0</td><td>25</td><td class="fare">10</td></tr>
+                <tr><td>Carriedo</td><td>12.0</td><td>27</td><td class="fare">10</td></tr>
+                <tr><td>Doroteo Jose</td><td>12.8</td><td>29</td><td class="fare">10</td></tr>
+                <tr><td>Bambang</td><td>13.6</td><td>31</td><td class="fare">10</td></tr>
+                <tr><td>Tayuman</td><td>14.4</td><td>33</td><td class="fare">10</td></tr>
+                <tr><td>Blumentritt</td><td>15.2</td><td>35</td><td class="fare">10</td></tr>
+                <tr><td>Abad Santos</td><td>16.0</td><td>37</td><td class="fare">10</td></tr>
+                <tr><td>R. Papa</td><td>16.8</td><td>39</td><td class="fare">10</td></tr>
+                <tr><td>5th Avenue</td><td>17.6</td><td>41</td><td class="fare">10</td></tr>
+                <tr><td>Monumento</td><td>18.4</td><td>43</td><td class="fare">10</td></tr>
+                <tr><td>Balintawak</td><td>20.0</td><td>46</td><td class="fare">10</td></tr>
+                <tr><td>Fernando Poe Jr.</td><td>21.7</td><td>49</td><td class="fare">10</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container" id="lrt2" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Distance from Recto (km)</th>
+                    <th>Travel Time from Recto (min)</th>
+                    <th>Base Fare (₱)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Recto</td><td>0.0</td><td>0</td><td class="fare">15</td></tr>
+                <tr><td>Legarda</td><td>1.1</td><td>2</td><td class="fare">15</td></tr>
+                <tr><td>Pureza</td><td>2.0</td><td>4</td><td class="fare">15</td></tr>
+                <tr><td>V. Mapa</td><td>3.0</td><td>6</td><td class="fare">15</td></tr>
+                <tr><td>J. Ruiz</td><td>4.0</td><td>8</td><td class="fare">15</td></tr>
+                <tr><td>Gilmore</td><td>5.0</td><td>10</td><td class="fare">15</td></tr>
+                <tr><td>Betty Go-Belmonte</td><td>6.0</td><td>12</td><td class="fare">15</td></tr>
+                <tr><td>Araneta Center-Cubao</td><td>7.0</td><td>14</td><td class="fare">15</td></tr>
+                <tr><td>Anonas</td><td>8.0</td><td>16</td><td class="fare">15</td></tr>
+                <tr><td>Katipunan</td><td>9.0</td><td>18</td><td class="fare">15</td></tr>
+                <tr><td>Santolan</td><td>10.5</td><td>20</td><td class="fare">15</td></tr>
+                <tr><td>Marikina-Pasig</td><td>12.0</td><td>23</td><td class="fare">15</td></tr>
+                <tr><td>Antipolo</td><td>13.8</td><td>26</td><td class="fare">15</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showTable() {
+            const value = document.getElementById("trainSelect").value;
+
+            document.getElementById("mrt").style.display = "none";
+            document.getElementById("lrt1").style.display = "none";
+            document.getElementById("lrt2").style.display = "none";
+
+            if(value) {
+                document.getElementById(value).style.display = "block";
+            }
+        }
+    </script>
+
+    <div style="overflow: visible; width: 100%; margin: 0px; background-color: #1b5f83c3; height: 250px; margin-top: 100px;">
+    <div style="color: white; margin-left: 100px ; position: relative; top: 40px;">
+        <h3>Creators</h3>
+        <p>Alysha, Aguilar</p>
+        <p>Nataliya, Pabale</p>
+        <p>Jake, Naguit</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <img src="logo.png" width="150px" height="auto" style=" position: relative; bottom: 250px; " >
+    </div>
+    <div style="color: white; float: right; margin-right: 100px; position: relative; bottom: 150px;">
+        <p>© 2026 www.LuzonLinkRail.com</p>
+    </div>
+
+    </div>
+    
+</body>
+</html>

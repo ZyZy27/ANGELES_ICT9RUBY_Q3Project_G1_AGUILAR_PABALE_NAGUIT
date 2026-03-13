@@ -1,0 +1,341 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REGISTRATION</title> 
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --delivery-blue: #0056b3;
+            --light-sky: #e3f2fd;
+            --cargo-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Jost';
+            background-color: var(--light-sky);
+            background-image: radial-gradient(var(--delivery-blue) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+            min-height: 100vh;
+        }
+        .hero-section{
+            background-image: url("hero.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 90px;
+            min-height: 150px;
+            overflow: visible;
+            position: relative;
+        }
+        .hero h1, .hero h2{
+            font-weight: 200;
+            margin: 0;
+        }
+        .logo{
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            position: relative;
+            right: 0;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            background-color: #1b5f83;
+            color:  white;
+            position: sticky;
+            top: 20px;
+            margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Jost';
+            padding: 0 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .btn-group{
+            position: relative;
+            display: flex;
+            gap: 25px;
+        }
+        .btn{
+            padding: 10px 18px;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Jost';
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: #1b5f83 ;
+            background-color: white;
+        }
+
+        .registration-card {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--cargo-white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 86, 179, 0.1);
+            border: 1px solid #dee2e6;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            min-width: 320px;
+        }
+
+        .sidebar-section {
+            width: 300px;
+            background: #f0f7ff;
+            border-left: 1px solid #d1e3f5;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--delivery-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .status-bar {
+            height: 4px;
+            background: var(--delivery-blue);
+            width: 60px;
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 5px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px;
+            background-color: #fcfcfc;
+        }
+
+        .form-control:focus {
+            border-color: var(--delivery-blue);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        #profile-container {
+            width: 180px;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px dashed var(--delivery-blue);
+            background: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: var(--delivery-blue);
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-custom {
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .nav-custom .nav-link {
+            color: var(--delivery-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-section">
+            <div>
+            <h1 style="letter-spacing: 6px; font-size: 80px; color: #1b5f83;">LINK LUZON,</h1>
+            <h2 style="letter-spacing: 4px; font-size: 50px;">RIDE THE FUTURE</h2>
+            </div>
+
+            <img src="logo.png" alt="LuzonLink Rail Logo" class="logo">
+        </div>
+
+    </header>
+
+    <div class="navbar">
+    <p style="font-size: 26px; font-weight: 300;">LUZONLINK RAIL</p>
+
+    <div class="btn-group">
+        <a href="index.html"><button class="btn">HOME</button></a>
+        <a href="reg.html" style="color: #1b5f83; background-color: white;"><button class="btn" style="color: #334155;">REGISTER</button></a>
+        <a href="farem.html"><button class="btn">FARE MATRIX</button></a>
+    </div>
+</div>
+
+<form id="lg" action="account.html" method="GET" style="margin-top: 40px;">
+    <div class="registration-card">
+        <div class="form-section">
+            <h1>Personnel Registration</h1>
+            <div class="status-bar"></div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="reg-fullname">Full Legal Name</label>
+                    <input type="text" id="reg-fullname" name="F1" placeholder="Enter name" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="reg-email">Corporate Email</label>
+                    <input type="email" id="reg-email" name="F2" placeholder="email@domain.com" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="reg-phone">Contact Number</label>
+                    <input type="text" id="reg-phone" name="F3" placeholder="Phone" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="reg-address">Residential Address</label>
+                <input type="text" id="reg-address" name="F5" placeholder="Street, City, Zip" class="form-control" required>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="reg-exp">Age</label>
+                    <input type="number" id="reg-age" min="1" max="100" name="F6" class="form-control" min="1" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="reg-user">System Username</label>
+                    <input type="text" id="reg-user" name="F7" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label" for="reg-pass">Access Password</label>
+                <input type="password" id="reg-pass" name="F8" class="form-control" required>
+            </div>
+            
+            <div class="mb-4 d-flex align-items-center">
+                <input type="checkbox" id="reg-terms" name="F9" class="me-2" required> 
+                <label for="reg-terms" style="font-size: 0.8rem; color: #64748b;">Accept Service Level Agreement</label>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" id="btn-submit" class="btn btn-primary">Verify & Register</button>
+                <button type="reset" id="btn-cancel" class="btn btn-outline-secondary">Abort</button>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <label class="form-label">ID Badge Credential</label>
+            <div id="profile-container">
+                <img id="profile-image" src="https://via.placeholder.com/180x220?text=NO+IMAGE" alt="ID Photo" />
+            </div>
+            <input type="file" id="image-upload" accept="image/*" style="display: none;" />
+            <button type="button" id="btn-upload" class="btn btn-sm btn-primary w-100" onclick="initUpload()">Update Photo</button>
+            <p class="mt-4 small text-muted" style="line-height: 1.4;">Submit a high-resolution portrait for your digital freight credentials.</p>
+        </div>
+    </div>
+</form>
+
+    <script>
+        function initUpload() {
+    document.getElementById('image-upload').click();
+}
+
+document.getElementById('image-upload').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-image').src = e.target.result;
+            // Save image in localStorage immediately
+            localStorage.setItem('profile-image', e.target.result);
+            alert("ID Photo Synced to Profile.");
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+document.getElementById("lg").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("reg-fullname").value;
+    let email = document.getElementById("reg-email").value;
+    let phone = document.getElementById("reg-phone").value;
+    let address = document.getElementById("reg-address").value;
+    let age = document.getElementById("reg-age").value;
+    let username = document.getElementById("reg-user").value;
+    let profileImage = document.getElementById("profile-image").src;
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("phone", phone);
+    localStorage.setItem("address", address);
+    localStorage.setItem("age", age);
+    localStorage.setItem("username", username);
+    localStorage.setItem("profile-image", profileImage);
+
+    alert("Registration saved!");
+    window.location.href = "account.html";
+});
+
+    </script>
+</body>
+</html>     
+
+      
+
+
+
+
+
+
+
+    
+      

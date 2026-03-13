@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+            height: 1000px;
+        }
+        .hero-section{
+            background-image: url("hero.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 90px;
+            min-height: 150px;
+            overflow: visible;
+            position: relative;
+        }
+        .hero h1, .hero h2{
+            font-weight: 200;
+            margin: 0;
+        }
+        .logo{
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            position: relative;
+            right: 0;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            background-color: #1b5f83;
+            color:  white;
+            position: sticky;
+            top: 20px;
+            margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Jost';
+            padding: 0 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .btn-group{
+            position: relative;
+            display: flex;
+            gap: 25px;
+        }
+        .btn{
+            padding: 10px 18px;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Jost';
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: #1b5f83 ;
+            background-color: white;
+        }
+        .l3:hover{
+            background-color: rgb(211, 209, 209);
+        }
+        .l2:hover{
+            background-color: rgb(211, 209, 209);
+        }
+        .l1:hover{
+            background-color: rgb(211, 209, 209);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-section">
+            <div>
+            <h1 style="letter-spacing: 6px; font-size: 80px; color: #1b5f83;">LINK LUZON,</h1>
+            <h2 style="letter-spacing: 4px; font-size: 50px;">RIDE THE FUTURE</h2>
+            </div>
+
+            <img src="logo.png" alt="LuzonLink Rail Logo" class="logo">
+        </div>
+
+    </header>
+
+<div class="navbar" style="position: sticky;">
+    <p style="font-size: 26px; font-weight: 300;">LUZONLINK RAIL</p>
+
+    <div class="btn-group">
+        <a href="booking.html" style="color: #1b5f83; background-color: white;"><button class="btn" style="color: #1b5f83;">HOME</button></a>
+        <a href="account.html"><button class="btn">ACCOUNT</button></a>
+    </div>
+</div>
+
+<div style="width: 100%; height: auto; display: flex; align-items: center; ">
+    <div style="box-shadow:  0 10px 30px rgba(0, 86, 179, 0.1); border: 5px solid #1b5f83; width: 50%; height: 200px; margin: 60px; padding: 20px;">
+        <h2>Manila Light Rail Transit</h2>
+        <p>The Manila Metro Rail Transit (MRT) and the Manila Light Rail Transit System (MLT) is a rapid transit systems in Manila, Philippines. MRT consists of one line and 13 stations, and MLT consists of two lines and 31 stations. MRT began operation in December 1999, and MLT in December 1984.</p>
+
+        <p>LRT runs from 05:00 to 22:00. On weekends, service ends at 21:00 - 21:30.</p>
+    </div>
+    <div class="lmrt" style="background-color: white; display: flex; flex-direction: column; width: 20%; margin: 60px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 86, 179, 0.1) ;">
+        <h2>Manila Lines</h2>
+        <a class="l1" href="LRT1.html"  style="border-left: 5px solid green;"><button style=" background-color: #1b5f8300; border-style: none;">LRT Line 1 (Roosevelt-Baclaran)</button></a>
+        <br>
+        <a class="l2" href="LRT2.html" style="border-left: 5px solid  blue;"><button style=" background-color: #1b5f8300; border-style: none;">LRT Line 2 (Santolan-Recto)</button></a>
+        <br>
+        <a class="l3" href="MRT3.html" style="border-left: 5px solid yellow;"><button style="background-color: #1b5f8300; border-style: none;">MRT Line 3 (North Avenue-Taft Avenue)</button></a>
+    </div>
+</div>
+
+<div style="overflow: visible; width: 100%; margin: 0px; background-color: #1b5f83c3; height: 250px; margin-top: 100px;">
+    <div style="color: white; margin-left: 100px ; position: relative; top: 40px;">
+        <h3>Creators</h3>
+        <p>Alysha, Aguilar</p>
+        <p>Nataliya, Pabale</p>
+        <p>Jake, Naguit</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <img src="logo.png" width="150px" height="auto" style=" position: relative; bottom: 250px; " >
+    </div>
+    <div style="color: white; float: right; margin-right: 100px; position: relative; bottom: 150px;">
+        <p>© 2026 www.LuzonLinkRail.com</p>
+    </div>
+
+</div>
+
+
+</body>
+</html>

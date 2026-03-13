@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+            height: 1000px;
+        }
+        .hero-section{
+            background-image: url("hero.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 90px;
+            min-height: 150px;
+            overflow: visible;
+            position: relative;
+        }
+        .hero h1, .hero h2{
+            font-weight: 200;
+            margin: 0;
+        }
+        .logo{
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            position: relative;
+            right: 0;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            background-color: #1b5f83;
+            color:  white;
+            position: sticky;
+            top: 20px;
+            margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Jost';
+            padding: 0 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .btn-group{
+            position: relative;
+            display: flex;
+            gap: 25px;
+        }
+        .btn{
+            padding: 10px 18px;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Jost';
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: #1b5f83 ;
+            background-color: white;
+        }
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            max-width:500px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+            margin: auto;
+        }
+
+        h2{
+        color:#1b5f83;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-section">
+            <div>
+            <h1 style="letter-spacing: 6px; font-size: 80px; color: #1b5f83;">LINK LUZON,</h1>
+            <h2 style="letter-spacing: 4px; font-size: 50px;">RIDE THE FUTURE</h2>
+            </div>
+
+            <img src="logo.png" alt="LuzonLink Rail Logo" class="logo">
+        </div>
+
+    </header>
+
+<div class="navbar"  style="position: sticky;">
+    <p style="font-size: 26px; font-weight: 300;">LUZONLINK RAIL</p>
+
+    <div class="btn-group">
+        <a href="booking.html"><button class="btn">HOME</button></a>
+        <a href="account.html" style="color: #1b5f83; background-color: white;"><button class="btn" style="color: #1b5f83;">ACCOUNT</button></a>
+    </div>
+</div>
+
+<div style="box-shadow:0 5px 20px rgba(0,0,0,0.1); width: 50%; border: 5px solid #1b5f83; border-radius: 20px; height: 150px; padding: 20px ; text-align: center;margin: 40px auto;">
+    <h2 style="color: #1b5f83; font-size: 50px;">ACCOUNT</h2>
+</div>
+
+<div class="card">
+    <h2>Registered Account</h2>
+    <div style="width: 100%; display: flex; justify-content: center; margin: auto;">
+        <img id="profile-image" width="150" height="200px" style="border: 2px dashed #1b5f83; border-radius: 20px;">
+    </div>
+
+    <p><b>Full Name:</b> <span id="fullname"></span></p>
+    <p><b>Email:</b> <span id="email"></span></p>
+    <p><b>Phone:</b> <span id="phone"></span></p>
+    <p><b>Address:</b> <span id="address"></span></p>
+    <p><b>Age:</b> <span id="experience"></span> years</p>
+    <p><b>Username:</b> <span id="username"></span></p>
+
+
+</div>
+
+<div style="overflow: visible; width: 100%; margin: 0px; background-color: #1b5f83c3; height: 250px; margin-top: 100px;">
+    <div style="color: white; margin-left: 100px ; position: relative; top: 40px;">
+        <h3>Creators</h3>
+        <p>Alysha, Aguilar</p>
+        <p>Nataliya, Pabale</p>
+        <p>Jake, Naguit</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <img src="logo.png" width="150px" height="auto" style=" position: relative; bottom: 250px; " >
+    </div>
+    <div style="color: white; float: right; margin-right: 100px; position: relative; bottom: 150px;">
+        <p>© 2026 www.LuzonLinkRail.com</p>
+    </div>
+
+</div>
+
+
+<script>
+
+
+    let name = localStorage.getItem("name");
+    let email = localStorage.getItem("email");
+    let phone = localStorage.getItem("phone");
+    let address = localStorage.getItem("address");
+    let exp = localStorage.getItem("age");
+    let username = localStorage.getItem("username");
+
+
+    document.getElementById("fullname").textContent = name;
+    document.getElementById("email").textContent = email;
+    document.getElementById("phone").textContent = phone;
+    document.getElementById("address").textContent = address;
+    document.getElementById("experience").textContent = exp;
+    document.getElementById("username").textContent = username;
+
+    const savedImage = localStorage.getItem('profile-image');
+    if(savedImage){
+        document.getElementById('profile-image').src = savedImage;
+    }else{
+        document.getElementById('profile-image').src = 'https://via.placeholder.com/150x200?text=NO+IMAGE';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+            height: 1000px;
+        }
+        .hero-section{
+            background-image: url("hero.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 90px;
+            min-height: 150px;
+            overflow: visible;
+            position: relative;
+        }
+        .hero h1, .hero h2{
+            font-weight: 200;
+            margin: 0;
+        }
+        .logo{
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            position: relative;
+            right: 0;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            background-color: #1b5f83;
+            color:  white;
+            position: sticky;
+            top: 20px;
+            margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Jost';
+            padding: 0 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 0;
+            z-index: 2;
+        }
+        .btn-group{
+            position: relative;
+            display: flex;
+            gap: 25px;
+        }
+        .btn{
+            padding: 10px 18px;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Jost';
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: #1b5f83 ;
+            background-color: white;
+        }
+        .line {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 10px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .station {
+            border: 2px solid #333;
+            padding: 6px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            text-align: center;
+
+            flex-shrink: 0;
+        }
+
+        .line::-webkit-scrollbar{
+            height: 6px;
+        }
+
+        .line::-webkit-scrollbar-thumb{
+            background: #1b5f83;
+            border-radius: 10px;
+        }
+
+        .station:hover::after {
+            content: attr(data-name);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 12px;
+        }
+
+        .station.Origin {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .station.Destination {
+        background-color: #FF5722;
+        color: white;
+        border-color: #FF5722;
+        }
+
+        .station.Between {
+        background-color: #FFC107;
+        color: white;
+        border-color: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-section">
+            <div>
+            <h1 style="letter-spacing: 6px; font-size: 80px; color: #1b5f83;">LINK LUZON,</h1>
+            <h2 style="letter-spacing: 4px; font-size: 50px;">RIDE THE FUTURE</h2>
+            </div>
+
+            <img src="logo.png" alt="LuzonLink Rail Logo" class="logo">
+        </div>
+
+    </header>
+
+<div class="navbar"  style="position: sticky;">
+    <p style="font-size: 26px; font-weight: 300;">LUZONLINK RAIL</p>
+
+    <div class="btn-group">
+        <a href="booking.html"><button class="btn">HOME</button></a>
+        <a href="account.html"><button class="btn">ACCOUNT</button></a>
+        <a href="LRT1.html" style="color: #1b5f83; background-color: white;"><button class="btn" style="color: #1b5f83;">LRT line 1</button></a>
+    </div>
+</div>
+
+<div style="width: 50%; border-left: 5px solid green; height: auto; padding: 20px ; margin-left: 50px ; margin: 40px;">
+    <h2 style="color: green; font-size: 50px;">LRT Line 1 (Baklaran-FPJ)</h2>
+</div>
+
+
+<div id="station-group" class="line">
+    <div class="station">Baclaran</div>
+    <div class="station">Redemptorist-Aseana</div>
+    <div class="station">MIA Road</div>
+    <div class="station">PITX</div>
+    <div class="station">Ninoy Aquino Ave.</div>
+    <div class="station">Dr. Santos</div>
+    <div class="station">Libertad</div>
+    <div class="station">Gil Puyat</div>
+    <div class="station">Vito Cruz</div>
+    <div class="station">Quirino</div>
+    <div class="station">Pedro Gill</div>
+    <div class="station">United Nations</div>
+    <div class="station">Central Terminal</div>
+    <div class="station">Carriedo</div>
+    <div class="station">Doroteo Jose</div>
+    <div class="station">Bambang</div>
+    <div class="station">Tayuman</div>
+    <div class="station">Blumentritt</div>
+    <div class="station">Abad Santos</div>
+    <div class="station">R. Papa</div>
+    <div class="station">5th Avenue</div>
+    <div class="station">Monumento</div>
+    <div class="station">Balintawak</div>
+    <div class="station">Fernando Poe Jr.</div>
+
+</div>
+
+<div>
+    <div style="width: 50%; height: auto; padding: 20px ; margin-left: 50px ; margin: 40px; color: green;">
+        <h2 id="od" style="border-left: 5px solid green;"></h2>
+    </div>
+    <div style="width: 50%; height: auto; padding: 20px ; margin-left: 50px ; margin: 40px; color: green;">
+        <p id="result" style="border-left: 5px solid green; "></p>
+    </div>
+    <div style="width: 50%;height: auto; padding: 20px ; margin-left: 50px ; margin: 40px; color: green;">
+        <p id="dis" style="border-left: 5px solid green; "></p>
+    </div>
+    <div style="width: 50%; height: auto; padding: 20px ; margin-left: 50px ; margin: 40px; color: green;">
+        <p id="dprice" style="border-left: 5px solid green;"></p>
+    </div>
+</div>
+
+<div style="overflow: visible; width: 100%; margin: 0px; background-color: #1b5f83c3; height: 250px; margin-top: 100px;">
+    <div style="color: white; margin-left: 100px ; position: relative; top: 40px;">
+        <h3>Creators</h3>
+        <p>Alysha, Aguilar</p>
+        <p>Nataliya, Pabale</p>
+        <p>Jake, Naguit</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <img src="logo.png" width="150px" height="auto" style=" position: relative; bottom: 250px; " >
+    </div>
+    <div style="color: white; float: right; margin-right: 100px; position: relative; bottom: 150px;">
+        <p>© 2026 www.LuzonLinkRail.com</p>
+    </div>
+
+</div>
+
+<script>
+
+
+
+    const stations = [
+        {name: "Baclaran", km: 0.0 },
+        {name: "Redemptorist-Aseana", km: 1.0 },
+        {name: "MIA Road", km: 1.8 },
+        {name: "PITX", km: 2.5 },
+        {name: "Ninoy Aquino Ave.", km: 3.3 },
+        {name: "Dr. Santos", km: 4.1 },
+        {name: "Libertad", km: 6.0 },
+        {name: "Gil Puyat", km: 6.8 },
+        {name: "Vito Cruz", km: 7.6 },
+        {name: "Quirino", km: 8.4 },
+        {name: "Pedro Gil", km: 9.2 },
+        {name: "United Nations", km: 10.0 },
+        {name: "Central Terminal", km: 11.0 },
+        {name: "Carriedo", km: 12.0 },
+        {name: "Doroteo Jose", km: 12.8 },
+        {name: "Bambang", km: 13.6 },
+        {name: "Tayuman", km: 14.4 },
+        {name: "Blumentritt", km: 15.2 },
+        {name: "Abad Santos", km: 16.0 },
+        {name: "R. Papa", km: 16.8 },
+        {name: "5th Avenue", km: 17.6 },
+        {name: "Monumento", km: 18.4 },
+        {name: "Balintawak", km: 20.0 },
+        {name: "Fernando Poe Jr.", km: 21.7 },
+    ];
+
+    let origin = null;
+    let dest = null;
+
+    const stationDivs = document.querySelectorAll("#station-group .station");
+
+
+    stationDivs.forEach((div, index) => {
+        div.dataset.name = stations[index].name;
+        div.dataset.km = stations[index].km;
+        div.dataset.index = index;
+
+        div.addEventListener("click", () => handleClick(index, div));
+        
+    });
+
+    function handleClick(index, div){
+        if (origin === null){
+            origin = index;
+            div.classList.add("Origin")
+        } else if (dest === null && index !== origin){
+            dest = index;
+            div.classList.add("Destination");
+
+            const start = Math.min(origin, dest);
+            const end = Math.max(origin, dest);
+            stationDivs.forEach((s, i) => {
+                if (i > start && i < end) s.classList.add("Between")
+            })
+
+            calculateFare();
+        } else {
+            resetSelection();
+            origin = index
+            div.classList.add("Origin")
+        }
+
+        
+    }
+
+    function calculateFare(){
+        if (origin === null || dest === null) return;
+
+        const distance = Math.abs(
+            stations[dest].km - stations[origin].km
+        );
+
+        const basefare = 10;
+        const perkm = 6;
+        const fare = Math.round(basefare + distance * perkm);
+
+        const age = Number(localStorage.getItem("age"));
+        let discount = 0;
+
+        const dis = document.getElementById("dis");
+
+        if (age >= 60){
+            discount = 0.20;
+            if(dis) dis.innerHTML = "DISCOUNT : 20%";
+        }
+        else if (age < 18){
+            discount = 0.05;
+            if(dis) dis.innerHTML = "DISCOUNT : 5%";
+        }
+        else{
+            if(dis) dis.innerHTML = "DISCOUNT : 0";
+        } 
+
+        const Dfare = Math.round(fare * (1 - discount));
+        document.getElementById("result").innerText = "Distance:" + distance.toFixed(2) + "km" + "|" + "Fare: P" + fare.toFixed(2);
+        
+        if (discount >= 0.05){
+            document.getElementById("dprice").innerText = "Discounted Fare: P" + Dfare.toFixed(2);
+        } else{
+            document.getElementById("dprice").innerText = "Discounted Fare: NONE";
+        }
+
+        const originName = stations[origin].name;
+        const destName = stations[dest].name;
+
+        document.getElementById("od").innerText =
+            "From: " + originName + " → To: " + destName;
+ 
+    }
+
+    
+
+    function resetSelection(){
+        origin = null;
+        dest = null;
+        stationDivs.forEach(s => s.classList.remove("Origin", "Destination", "Between"));
+        document.getElementById("result").innerText = "Select Two Stations"
+    }
+    
+
+</script>
+
+</body>
+</html>
